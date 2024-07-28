@@ -35,7 +35,7 @@
 
     <style>
         body {
-            background-color: goldenrod;
+            background-color: black;
             margin: 0;
             color: white;
         }
@@ -59,7 +59,7 @@
             background-color: black;
             color: whitesmoke;
             position: fixed;
-            margin-top: 40px;
+            margin-top: 38px;
             width: 100%;
             height: 100%;
             padding: 20px 20px;
@@ -67,13 +67,68 @@
             font-size: 17px;
             line-height: 35px;
         }
+
+        /* The popup form - hidden by default */
+        .form-popup {
+            display: none;
+            position: fixed;
+            top: auto;
+            bottom: auto;
+            border: 3px solid black;
+            border-radius: 15px;
+            z-index: 9;
+            background-color: #04AA6D;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            border-radius: 15px;
+            background-color: cadetblue;
+        }
+
+        /* Full-width input fields */
+        .form-container input[type=text],
+        .form-container input[type=password] {
+            width: 90%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: whitesmoke;
+        }
+
+        /* When the inputs get focus, do something */
+        .form-container input[type=text]:focus,
+        .form-container input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+            background-color: gray;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+        }
     </style>
 </head>
 
 <body>
 
     <div style="z-index: 1000;" class="bar">
-        <img style="width: 30px; position: fixed;" src="https://kyle-inc.github.io/resource/shell/shell-icon.png" alt="">
+        <img style="width: 30px; position: fixed;" src="https://kyle-inc.github.io/resource/shell/shell-icon.png"
+            alt="">
         <div style="position: fixed; margin-left: 45px; line-height: 30px;">Power Shell by KYLE</div>
         <button onclick="self.close()"
             style="border: none; color: white; background-color: red; width: fit-content; float: inline-end; margin-right: 18px; padding: 8px 15px;">
@@ -88,7 +143,8 @@
     <div id="flscreen">
 
         <div style="z-index: 100;" class="bar">
-            <img style="width: 30px; position: fixed;" src="https://kyle-inc.github.io/resource/shell/shell-icon.png" alt="">
+            <img style="width: 30px; position: fixed;" src="https://kyle-inc.github.io/resource/shell/shell-icon.png"
+                alt="">
             <div style="position: fixed; margin-left: 45px; line-height: 30px;">Power Shell by KYLE</div>
             <button onclick="self.close()"
                 style="border: none; color: white; background-color: red; width: fit-content; float: inline-end; margin-right: 18px; padding: 8px 15px;">
@@ -107,10 +163,35 @@
                 style="border: none; color: white; background-color: royalblue; padding: 6px 15px;" type="button"
                 value="Click to Update" onclick="windowClose();">
             <br>
-            PS https://kyle-inc.github.io/achitecture/kyle> <a href=""><button
-                    style="border: none; color: greenyellow; background-color: black; width: fit-content; padding: 8px 10px;">Sign
+            PS https://kyle-inc.github.io/achitecture/kyle> <a href=""><button onclick="openForm()"
+                    style="border: none; color: green; background-color: black; font-size: 18px; width: fit-content;">Sign
                     to continue</button></a>
             <br>
+
+            <div class="form-popup" id="myForm">
+                <form action="/action_page.php" class="form-container">
+                    <h1>Login</h1>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit" class="btn">Login</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+            </script>
         </div>
 
     </div>
