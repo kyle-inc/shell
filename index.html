@@ -68,25 +68,14 @@
             line-height: 35px;
         }
     </style>
-
-    <script type="text/javascript">
-        function closeCurrentTab() {
-            var conf = confirm("Are you sure, you want to close this tab?");
-            if (conf == true) {
-                close();
-            }
-        }
-    </script>
-
 </head>
 
 <body>
 
     <div style="z-index: 1000;" class="bar">
-        <img style="width: 30px; position: fixed;" src="https://kyle-inc.github.io/resource/shell/shell-icon.png"
-            alt="">
+        <img style="width: 30px; position: fixed;" src="https://kyle-inc.github.io/resource/shell/shell-icon.png" alt="">
         <div style="position: fixed; margin-left: 45px; line-height: 30px;">Power Shell by KYLE</div>
-        <button onclick="closeCurrentTab()"
+        <button onclick="self.close()"
             style="border: none; color: white; background-color: red; width: fit-content; float: inline-end; margin-right: 18px; padding: 8px 15px;">
             X</button>
 
@@ -99,10 +88,9 @@
     <div id="flscreen">
 
         <div style="z-index: 100;" class="bar">
-            <img style="width: 30px; position: fixed;" src="https://kyle-inc.github.io/resource/shell/shell-icon.png"
-                alt="">
+            <img style="width: 30px; position: fixed;" src="https://kyle-inc.github.io/resource/shell/shell-icon.png" alt="">
             <div style="position: fixed; margin-left: 45px; line-height: 30px;">Power Shell by KYLE</div>
-            <button onclick="setTimeout(function(){var ww = window.open(window.location, '_self'); ww.close(); }, 0);"
+            <button onclick="self.close()"
                 style="border: none; color: white; background-color: red; width: fit-content; float: inline-end; margin-right: 18px; padding: 8px 15px;">
                 X</button>
 
@@ -117,8 +105,7 @@
             <br>
             Install the latest PowerShell for new features and improvements! <input
                 style="border: none; color: white; background-color: royalblue; padding: 6px 15px;" type="button"
-                value="Click to Update"
-                onclick="setTimeout(function(){var ww = window.open(window.location, '_self'); ww.close(); }, 200);">
+                value="Click to Update" onclick="windowClose();">
             <br>
             PS https://kyle-inc.github.io/achitecture/kyle> <a href=""><button
                     style="border: none; color: greenyellow; background-color: black; width: fit-content; padding: 8px 10px;">Sign
