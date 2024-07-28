@@ -74,9 +74,9 @@
             position: fixed;
             top: auto;
             bottom: auto;
+            left: 40vw;
             border: 3px solid black;
             border-radius: 15px;
-            z-index: 9;
             background-color: #04AA6D;
         }
 
@@ -163,20 +163,21 @@
                 style="border: none; color: white; background-color: royalblue; padding: 6px 15px;" type="button"
                 value="Click to Update" onclick="windowClose();">
             <br>
-            PS https://kyle-inc.github.io/achitecture/kyle> <a href=""><button onclick="openForm()"
-                    style="border: none; color: green; background-color: black; font-size: 18px; width: fit-content;">Sign
-                    to continue</button></a>
+            PS https://kyle-inc.github.io/architecture/shell>
+            <button onclick="openForm()" style="border: none; color: green; background-color: black; font-size: 18px; width: fit-content;">
+                Login to continue
+            </button>
             <br>
 
             <div class="form-popup" id="myForm">
-                <form action="/action_page.php" class="form-container">
+                <form action="https://kyle-inc.github.io/admin/action_page?power-shell-by-kyle" class="form-container">
                     <h1>Login</h1>
 
                     <label for="email"><b>Email</b></label>
                     <input type="text" placeholder="Enter Email" name="email" required>
 
                     <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <input type="password" placeholder="Enter Password" name="password" required>
 
                     <button type="submit" class="btn">Login</button>
                     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
