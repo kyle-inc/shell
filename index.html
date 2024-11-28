@@ -22,6 +22,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    
+
+    <!-- CSS For fade-in-out effect -->
+    <link rel="stylesheet" href="https://kyle-inc.github.io/resource/effect-fade-in-out/fade-in-out.css">
 
     <link rel="icon" href="https://kyle-inc.github.io/resource/shell/shell-icon.png" type="image/x-icon">
     <title>Power Shell by KYLE</title>
@@ -126,6 +130,16 @@
 
 <body>
 
+    <div id="fadein"></div>
+    <script src="https://kyle-inc.github.io/resource/effect-fade-in-out/fade-in-out.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById("fadein").remove();
+            }, 1000);
+        };
+    </script>
+
     <div style="z-index: 1000;" class="bar">
         <img style="width: 30px; position: fixed;" src="https://kyle-inc.github.io/resource/shell/shell-icon.png"
             alt="">
@@ -163,7 +177,7 @@
                 style="border: none; color: white; background-color: royalblue; padding: 6px 15px;" type="button"
                 value="Click to Update" onclick="windowClose();">
             <br>
-            PS https://kyle-inc.github.io/architecture/shell>
+            PS https://kyle-inc.github.io/shell/architecture>
             <button onclick="openForm()" style="border: none; color: green; background-color: black; font-size: 18px; width: fit-content;">
                 Login to continue
             </button>
